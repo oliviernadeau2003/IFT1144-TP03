@@ -3,15 +3,15 @@ const POUCESVERSCM = 2.5;
 const CMVERSPOUCES = 1 / 2.5;
 
 function poucesVersCm(valeur) {
-    document.getElementById("resultat").innerHTML = "Pouces => " + valeur * POUCESVERSCM + " cm";
+    document.getElementById("resultat").innerHTML = "Pouces => " + (valeur * POUCESVERSCM).toFixed(1) + " cm";
 }
 
 function cmVersPouces(valeur) {
-    document.getElementById("resultat").innerHTML = "cm => " + valeur * CMVERSPOUCES + " pouces";
+    document.getElementById("resultat").innerHTML = "cm => " + (valeur * CMVERSPOUCES).toFixed(1) + " pouces";
 }
 
 function celciusVersFarenheit(valeur) {
-    document.getElementById("resultat").innerHTML = "celcius => " + ((valeur * 9 / 5) + 32) + " farenheit";
+    document.getElementById("resultat").innerHTML = "celcius => " + ((valeur * 9 / 5) + 32).toFixed(1) + " farenheit";
 }
 
 function farenheitVersCelcius(valeur) {
