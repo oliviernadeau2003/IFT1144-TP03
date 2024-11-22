@@ -3,3 +3,14 @@ body {
     margin: 0px;
     padding: 4px;
 }
+
+/* Partie 02 */
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
+
+/* Partie 03 */

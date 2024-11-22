@@ -39,8 +39,20 @@
 
 
         <!-- PARTIE 02 -->
-        <h2>Partie 2</h2>
-
+        <h2>Partie 2 : Affichage du texte dans la page Web (contrôlé par JavaScript)</h2>
+        <p>
+            <label>Nom: </label>
+            <input type="text" name="nomPrenom" id="nomPrenom" value="Nom Prénom">
+        </p>
+        <p>
+            <label>Niveau (1 à 6)</label>
+            <input type="text" name="taille" id="taille" value="">
+            <button type="button" onclick="afficherPartie2(
+                document.getElementById('nomPrenom').value,
+                parseFloat(document.getElementById('taille').value)
+            )">Afficher partie 2</button>
+        </p>
+        <div id="resultat2">Affichage ici</div>
         <!-- PARTIE 03 -->
         <h2>Partie 3</h2>
 

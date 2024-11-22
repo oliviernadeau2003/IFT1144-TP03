@@ -19,5 +19,11 @@ function farenheitVersCelcius(valeur) {
 }
 
 // Partie 02
+function afficherPartie2(nomPrenom, taille) {
+    if (!(taille >= 1 && taille <= 6))
+        document.getElementById("resultat2").innerHTML = "<span class='incorrect'>Erreur le niveau doit être entre 1 et 6</span>";
+    else
+        document.getElementById("resultat2").innerHTML = "<h" + taille + " class='correct'>Bonjour " + nomPrenom + " Niveau= " + taille + "</h" + taille + " > ";
+}
 
 // Partie 03
