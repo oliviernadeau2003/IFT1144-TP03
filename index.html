@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>IFT1144 - TP03</title>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <h1>Travail pratique #3</h1>
+        <h2>Identification</h2>
+        <p>Ce travail à été fait par Nadeau Olivier - Matricule : 20316525</p>
+
+        <div>
+            <p>
+                <label>Valeur </label>
+                <input type="text" name="conversion" id="conversion" value="0">
+                <span id="resultat">Résultat ici : </span><br>
+            <div>
+                <button type="button" onclick="poucesVersCm(parseFloat(document.getElementById('conversion').value))">
+                    Pouces vers Cm</button>
+                <button type="button"
+                    onclick="cmVersPouces((parseFloat(document.getElementById('conversion').value)))">Cm vers
+                    Pouces</button>
+                <button type="button"
+                    onclick="celciusVersFarenheit((parseFloat(document.getElementById('conversion').value)))">Celcius
+                    vers
+                    Farenheit</button>
+                <button type="button"
+                    onclick="farenheitVersCelcius((parseFloat(document.getElementById('conversion').value)))">Farenheit
+                    vers
+                    Pouces</button>
+            </div>
+            </p>
+        </div>
+
+        <!-- PARTIE 01 -->
+        <h2>Partie 1 : Formulaire de conversion</h2>
+
+        <!-- PARTIE 02 -->
+        <h2>Partie 2</h2>
+
+        <!-- PARTIE 03 -->
+        <h2>Partie 3</h2>
+
+
+
+
+        <script src="./scripts/script.js"></script>
+    </body>
+
+</html>
