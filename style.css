@@ -14,3 +14,20 @@ body {
 }
 
 /* Partie 03 */
+ul {
+    display: block;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    background-color: #E5EECC;
+    font-size: 1.5em;
+}
+
+ul ul {
+    display: none;
+    margin-left: 20px;
+}
+
+.elementSelec {
+    background-color: #D5CCEE;
+}
