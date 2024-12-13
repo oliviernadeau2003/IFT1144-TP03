@@ -27,6 +27,21 @@ function afficherPartie2(nomPrenom, taille) {
 }
 
 // Partie 03
+let prixEntree = 0;
+let prixPrincipal = 0;
+let prixDeserts = 0;
+let prixBoissons = 0;
+
+let taxe = 0;
+let totalSansTaxe = 0;
+let totalAvecTaxe = 0;
+
+let calculerTotal = () => {
+    totalSansTaxe = (prixEntree + prixPrincipal + prixDeserts + prixBoissons);
+    taxe = ((totalSansTaxe * 1.14975) - totalSansTaxe);
+    totalAvecTaxe = (totalSansTaxe + taxe);
+}
+
 var monMenu = {
     "Escargot": { cat: "Entree", image: "escargot.jpg", prix: 5.50 },
     "Salade verte": { cat: "Entree", image: "salade2.jpg", prix: 5.95 },
@@ -55,25 +70,34 @@ $(document).ready(function () {
     $('li li').on('click', function (e) {
         let choixSelec = $(this).html();
         let objChoix = monMenu[choixSelec];
-        let parent = $(this).parent().html();
-        console.log(parent);
 
-
-        if (objChoix.cat == "Entree") {
-            $("#prixEntree").html(objChoix.prix)
-            $("#imgEntree").attr('src', "./images/" + objChoix.image);
-        }
-        if (objChoix.cat == "Principal") {
-            $("#prixPrincipal").html(objChoix.prix);
-            $("#imgPrincipal").attr('src', "./images/" + objChoix.image);
-        }
-        if (objChoix.cat == "Deserts") {
-            $("#prixDessert").html(objChoix.prix);
-            $("#imgDessert").attr('src', "./images/" + objChoix.image);
-        }
-        if (objChoix.cat == "Boissons") {
-            $("#prixBoissons").html(objChoix.prix);
-            $("#imgBoissons").attr('src', "./images/" + objChoix.image);
+        switch (objChoix.cat) {
+            case "Entree":
+                prixEntree = objChoix.prix;
+                $("#prixEntree").html(prixEntree.toFixed(2) + "$");
+                $("#imgEntree").attr('src', "./images/" + objChoix.image);
+                break;
+            case "Principal":
+                prixPrincipal = objChoix.prix;
+                $("#prixPrincipal").html(prixPrincipal.toFixed(2) + "$");
+                $("#imgPrincipal").attr('src', "./images/" + objChoix.image);
+                break;
+            case "Dessert":
+                prixDeserts = objChoix.prix;
+                $("#prixDeserts").html(prixDeserts.toFixed(2) + "$");
+                $("#imgDeserts").attr('src', "./images/" + objChoix.image);
+                break;
+            case "Boisson":
+                prixBoissons = objChoix.prix;
+                $("#prixBoissons").html(prixBoissons.toFixed(2) + "$");
+                $("#imgBoissons").attr('src', "./images/" + objChoix.image);
+                break;
         }
     });
+
+    $('#btnCalculerFacture').on('click', () => {
+        calculerTotal();
+        $('#total').html(`Total: ${totalSansTaxe.toFixed(2)}$ taxes: ${taxe.toFixed(2)}$ = ${totalAvecTaxe.toFixed(2)}$`);
+    });
+
 });

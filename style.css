@@ -15,6 +15,10 @@ body {
 }
 
 /* Partie 03 */
+#tp3 {
+    border: 1px solid black;
+    display: inline-flex;
+}
 
 ul {
     display: block;
@@ -28,8 +32,30 @@ ul {
 ul ul {
     display: none;
     margin-left: 20px;
+
+}
+
+ul li ul li {
+    font-size: 25px;
 }
 
 .elementSelec {
     background-color: #D5CCEE;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+#siteMenu {
+    width: 250px;
+}
+
+.prix {
+    font-size: 24px;
+}
+
+th {
+    text-align: left;
 }
