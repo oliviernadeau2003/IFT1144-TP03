@@ -60,8 +60,6 @@
         <!-- PARTIE 03 -->
         <h2>Partie 3 : Affichage du menu, animation des images et calcul du coût </h2>
         <div id="tp3">
-
-
             <div class="container">
                 <div id="siteMenu">
                     <ul>
@@ -97,7 +95,6 @@
                 </div>
 
                 <div style="padding: 4px;">
-
                     <h3>Votre choix:</h3>
                     <table id="choixMenu">
                         <tr>
@@ -107,10 +104,10 @@
                             <th>Boisson:</th>
                         </tr>
                         <tr>
-                            <td><img id="imgEntree" src="./images/vide.jpg" alt=""></td>
-                            <td><img id="imgPrincipal" src="./images/vide.jpg" alt=""></td>
-                            <td><img id="imgDeserts" src="./images/vide.jpg" alt=""></td>
-                            <td><img id="imgBoissons" src="./images/vide.jpg" alt=""></td>
+                            <td><img id="imgEntree" src="./images/vide.jpg" alt="imgEntree"></td>
+                            <td><img id="imgPrincipal" src="./images/vide.jpg" alt="imgPrincipal"></td>
+                            <td><img id="imgDeserts" src="./images/vide.jpg" alt="imgDeserts"></td>
+                            <td><img id="imgBoissons" src="./images/vide.jpg" alt="imgBoissons"></td>
                         </tr>
                         <tr>
                             <td><span id="prixEntree" class="prix"></span></td>
@@ -119,53 +116,16 @@
                             <td><span id="prixBoissons" class="prix"></span></td>
                         </tr>
                     </table>
-                    <button id="btnCalculerFacture" type="button">Cliquez ici pour calculer la facture</button><br>
+
+                    <form onsubmit="calculerEtAfficher(); return false;">
+                        <button id="btnCalculerFacture" type="submit">Cliquez ici pour calculer la facture</button><br>
+                    </form>
                     <p id="total"></p>
                 </div>
 
             </div>
 
-
-
-            <!-- 
-            <div id="siteMenu">
-                <ul>
-                    <li class="elementSelec">Menu</li>
-                    <li>Entrée
-                        <ul>
-                            <li>Escargot</li>
-                            <li>Salade verte</li>
-                            <li>Salade César</li>
-                        </ul>
-                    </li>
-                    <li>Principal
-                        <ul>
-                            <li>Spaghetti</li>
-                            <li>Steak</li>
-                            <li>Pizza</li>
-                        </ul>
-                    </li>
-                    <li>Deserts
-                        <ul>
-                            <li>Crème glacée</li>
-                            <li>Gateau</li>
-                            <li>Pouding</li>
-                        </ul>
-                    </li>
-                    <li>Boissons
-                        <ul>
-                            <li>Café / Thé</li>
-                            <li>Paragraphes</li>
-                            <li>Boisson gazeuse</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div> -->
-
         </div>
-
-
-
 
         <script src="./script.js"></script>
     </body>

@@ -38,8 +38,13 @@ let totalAvecTaxe = 0;
 
 let calculerTotal = () => {
     totalSansTaxe = (prixEntree + prixPrincipal + prixDeserts + prixBoissons);
-    taxe = ((totalSansTaxe * 1.14975) - totalSansTaxe);
+    taxe = (totalSansTaxe * 0.14975);
     totalAvecTaxe = (totalSansTaxe + taxe);
+}
+
+function calculerEtAfficher() {
+    calculerTotal();
+    $('#total').html(`Total: ${totalSansTaxe.toFixed(2)}$ taxes: ${taxe.toFixed(2)}$ = ${totalAvecTaxe.toFixed(2)}$`);
 }
 
 var monMenu = {
@@ -95,9 +100,9 @@ $(document).ready(function () {
         }
     });
 
-    $('#btnCalculerFacture').on('click', () => {
-        calculerTotal();
-        $('#total').html(`Total: ${totalSansTaxe.toFixed(2)}$ taxes: ${taxe.toFixed(2)}$ = ${totalAvecTaxe.toFixed(2)}$`);
-    });
+    // $('#btnCalculerFacture').on('click', () => {
+    //     calculerTotal();
+    //     $('#total').html(`Total: ${totalSansTaxe.toFixed(2)}$ taxes: ${taxe.toFixed(2)}$ = ${totalAvecTaxe.toFixed(2)}$`);
+    // });
 
 });
