@@ -27,7 +27,6 @@ function afficherPartie2(nomPrenom, taille) {
 }
 
 // Partie 03
-
 var monMenu = {
     "Escargot": { cat: "Entree", image: "escargot.jpg", prix: 5.50 },
     "Salade verte": { cat: "Entree", image: "salade2.jpg", prix: 5.95 },
@@ -54,12 +53,27 @@ $(document).ready(function () {
     });
 
     $('li li').on('click', function (e) {
-        let selectMenu = $(this).html();
-        alert(" Vous avez cliquez :" + selectMenu);
-        let varprixAccueil = $("#prixAccueil").html();
-        if (isNaN(varprixAccueil))
-            varprixAccueil = 0;
-        alert("Le montant total avec taxes des formations choisites est de : " + parseFloat((varprixAccueil) * 1.15) + " $");
+        let choixSelec = $(this).html();
+        let objChoix = monMenu[choixSelec];
+        let parent = $(this).parent().html();
+        console.log(parent);
 
+
+        if (objChoix.cat == "Entree") {
+            $("#prixEntree").html(objChoix.prix)
+            $("#imgEntree").attr('src', "./images/" + objChoix.image);
+        }
+        if (objChoix.cat == "Principal") {
+            $("#prixPrincipal").html(objChoix.prix);
+            $("#imgPrincipal").attr('src', "./images/" + objChoix.image);
+        }
+        if (objChoix.cat == "Deserts") {
+            $("#prixDessert").html(objChoix.prix);
+            $("#imgDessert").attr('src', "./images/" + objChoix.image);
+        }
+        if (objChoix.cat == "Boissons") {
+            $("#prixBoissons").html(objChoix.prix);
+            $("#imgBoissons").attr('src', "./images/" + objChoix.image);
+        }
     });
 });

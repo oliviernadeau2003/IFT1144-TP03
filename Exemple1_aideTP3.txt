@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Page Web avec Menu JQuery</title>
+		<script src="">//mettre le lien de la librairie</script>
+		<style>
+			ul {
+			  display: block;
+			  list-style-type: none;
+			  margin: 0px;
+			  padding: 0px;
+			  background-color: rgb(243,164,151); 
+			  font-size: 1.5em;
+			}
+			ul ul {
+			  display: none;
+			  margin-left: 20px;
+			}
+
+			.liclasseaff {
+			  background-color: rgb(178,184,210); 
+			}	
+		</style>
+	
+   
+	</head>
+
+	<body>
+		<header>
+		  <h1> Titre de niveau 1 : Exemple de Menu et ses sous menus </h1>
+		  <h2> Titre de niveau 2 : Avec l'utilisation du JQuery</h2>
+		  <hr>	
+		</header>
+  		<div id="siteMenu"> 
+		    <ul>
+		     <li class= "liclasseaff">Liste des formations</li>
+		     <!--Exemple de menu et un ssmenu-->
+		    <li>Accueil
+		     	<ul> 
+			  <li>Caractères</li>		
+			  <li>Paragraphes</li>
+			  <li>Pages</li>
+		        </ul>
+		    </li>
+		    
+		    
+		</ul>
+		</div>
+	
+		
+		<script>
+		  
+    	 $(document).ready(function(){
+     		  
+		   //Affichage de la liste niveau 1 et 2
+		  $('li').on('click', function(e) {
+                if ($(this).hasClass('liclasseaff'))
+                    return; 
+                let selelement = $(this).parent();
+                selelement.find('li').removeClass('liclasseaff').find('ul').hide();
+                $(this).addClass('liclasseaff').children('ul').slideToggle(500);
+            });
+			
+		   $('li li').on('click', function(e) { 
+		     let selectMenu = $(this).html();
+		     alert(" Vous avez cliquez :" + selectMenu);
+ 		     let varprixAccueil = $("#prixAccueil").html();  
+			 	if (isNaN(varprixAccueil))
+					varprixAccueil = 0;
+					alert( "Le montant total avec taxes des formations choisites est de : "+ parseFloat((varprixAccueil)*1.15) + " $");
+						
+		  });	
+		 });
+   	     </script>
+		
+   
+ 	</body>
+</html>

@@ -5,6 +5,7 @@ body {
 }
 
 /* Partie 02 */
+
 .correct {
     color: green;
 }
@@ -14,6 +15,7 @@ body {
 }
 
 /* Partie 03 */
+
 ul {
     display: block;
     list-style-type: none;
